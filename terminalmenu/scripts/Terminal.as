@@ -829,8 +829,8 @@ package
             {
                prevLine2 = prevLine;
                prevLine = line;
-               line = responses[i];
-               if(i > 1 && /.+=[0-9]+/.test(line) && prevLine2.length > 0 && !Boolean(attemptWords[prevLine2]))
+               line = responses[i].replace(/\s+/g,"").replace(/ /g,"");
+               if(i > 1 && /.*\=[0-9]+/.test(line) && prevLine2.length > 0 && !Boolean(attemptWords[prevLine2]))
                {
                   attempts.push({
                      "word":prevLine2,
