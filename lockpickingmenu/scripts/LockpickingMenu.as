@@ -58,6 +58,12 @@ package
       public function InitLockpickingMenu() : *
       {
          this.DebugDisplay_mc.visible = true;
+         this.DebugDisplay_mc.PickAngleText.visible = false;
+         this.DebugDisplay_mc.LockAngleText.visible = false;
+         this.DebugDisplay_mc.PickHealthText.visible = false;
+         this.DebugDisplay_mc.SweetSpotText.visible = false;
+         this.DebugDisplay_mc.PartialPickText.visible = false;
+         this.DebugDisplay_mc.SweetSpotRects_mc.PartialPickRect.visible = false;
          this.ExitButton.ButtonVisible = false;
       }
       
