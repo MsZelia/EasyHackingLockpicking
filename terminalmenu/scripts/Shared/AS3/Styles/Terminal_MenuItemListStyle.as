@@ -10,7 +10,6 @@ package Shared.AS3.Styles
       public static var numListItems_Inspectable:uint = 12;
       
       public static var textOption_Inspectable:String = BSScrollingList.TEXT_OPTION_MULTILINE;
-       
       
       public function Terminal_MenuItemListStyle()
       {
@@ -18,3 +17,4 @@ package Shared.AS3.Styles
       }
    }
 }
+

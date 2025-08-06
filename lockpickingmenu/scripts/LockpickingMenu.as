@@ -12,7 +12,6 @@ package
    [Embed(source="/_assets/assets.swf", symbol="symbol16")]
    public class LockpickingMenu extends IMenu
    {
-       
       
       public var ButtonHintBar_mc:BSButtonHintBar;
       
@@ -102,8 +101,8 @@ package
       
       public function UpdateSweetSpot(param1:Number, param2:Number, param3:Number) : void
       {
-         var _loc4_:MovieClip;
-         (_loc4_ = this.DebugDisplay_mc.SweetSpotRects_mc).SweetSpotRect.x = this.PickAngleToXInv(param1 + param2 / 2);
+         var _loc4_:MovieClip = this.DebugDisplay_mc.SweetSpotRects_mc;
+         _loc4_.SweetSpotRect.x = this.PickAngleToXInv(param1 + param2 / 2);
          _loc4_.SweetSpotRect.width = this.PickAngleToXInv(param1 - param2 / 2) - _loc4_.SweetSpotRect.x;
          _loc4_.PartialPickRect.x = this.PickAngleToX(param1 - param2 / 2 - param3);
          _loc4_.PartialPickRect.width = this.PickAngleToX(param1 + param2 / 2 + param3) - _loc4_.PartialPickRect.x;
@@ -129,3 +128,4 @@ package
       }
    }
 }
+

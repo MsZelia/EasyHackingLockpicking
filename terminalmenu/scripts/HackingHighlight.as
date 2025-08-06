@@ -6,7 +6,6 @@ package
    [Embed(source="/_assets/assets.swf", symbol="symbol12")]
    public dynamic class HackingHighlight extends MovieClip
    {
-       
       
       public var HackingHighlightBorder_mc:MovieClip;
       
@@ -18,3 +17,4 @@ package
       }
    }
 }
+

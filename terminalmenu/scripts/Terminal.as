@@ -23,7 +23,6 @@ package
    [Embed(source="/_assets/assets.swf", symbol="symbol22")]
    public class Terminal extends IMenu
    {
-       
       
       public var HeaderText_tf:TextField;
       
@@ -131,16 +130,14 @@ package
       
       private var isHacking:Boolean = false;
       
-      private var attempts:Array;
+      private var attempts:Array = [];
       
-      private var attemptWords:Object;
+      private var attemptWords:Object = {};
       
       private var isUpdating:Boolean = false;
       
       public function Terminal()
       {
-         this.attempts = [];
-         this.attemptWords = {};
          super();
          this.BGSCodeObj = new Object();
          this.strHeaderText = new String();
@@ -257,7 +254,8 @@ package
          var _loc5_:int = param1.length - 1;
          while(_loc5_ >= 0)
          {
-            if(_loc4_ = param1.text.charCodeAt(_loc5_) != 13 && param1.text.charCodeAt(_loc5_) != 10 && (param1.text.charCodeAt(_loc5_) != 32 || param1.length > 1))
+            _loc4_ = param1.text.charCodeAt(_loc5_) != 13 && param1.text.charCodeAt(_loc5_) != 10 && (param1.text.charCodeAt(_loc5_) != 32 || param1.length > 1);
+            if(_loc4_)
             {
                break;
             }
@@ -411,7 +409,8 @@ package
                {
                   if(this.DisplayText_tf.visible)
                   {
-                     _loc16_ = (_loc15_ = this.displayText_y + this.DisplayText_tf.textHeight + this.displayTextMenuBuffer_y) - this.MenuItemList_mc.y;
+                     _loc15_ = this.displayText_y + this.DisplayText_tf.textHeight + this.displayTextMenuBuffer_y;
+                     _loc16_ = _loc15_ - this.MenuItemList_mc.y;
                      this.MenuItemList_mc.border.height -= _loc16_;
                      this.MenuItemList_mc.ScrollDown.y -= _loc16_;
                      this.MenuItemList_mc.y = _loc15_;
@@ -460,8 +459,8 @@ package
          {
             _loc5_ = true;
          }
-         var _loc6_:Point;
-         if((_loc6_ = this.ConvertToGlobal(this.ResponseText_tf)).x != -1)
+         var _loc6_:Point = this.ConvertToGlobal(this.ResponseText_tf);
+         if(_loc6_.x != -1)
          {
             this.SetCursorPosition(_loc6_.x,_loc6_.y);
          }
@@ -480,8 +479,8 @@ package
          var _loc8_:uint = 0;
          var _loc9_:TextField = null;
          var _loc10_:Point = null;
-         var _loc4_:Array;
-         var _loc5_:* = (_loc4_ = this.MenuItemList_mc.entryList).length == 0;
+         var _loc4_:Array = this.MenuItemList_mc.entryList;
+         var _loc5_:* = _loc4_.length == 0;
          var _loc6_:Boolean = true;
          var _loc7_:uint = 0;
          while(_loc6_ && _loc7_ < _loc4_.length)
@@ -730,8 +729,8 @@ package
             this.ResponseLog_tf.visible = true;
          }
          var _loc3_:uint = this.BGSCodeObj.GetHackingBoardCharHeight() - 1;
-         var _loc4_:uint;
-         if((_loc4_ = this.ResponseLog_tf.text.length == 1 ? 0 : uint(this.ResponseLog_tf.numLines)) >= _loc3_)
+         var _loc4_:uint = this.ResponseLog_tf.text.length == 1 ? 0 : uint(this.ResponseLog_tf.numLines);
+         if(_loc4_ >= _loc3_)
          {
             _loc6_ = new String();
             _loc7_ = uint(_loc4_ - _loc3_ + 1);
@@ -1043,3 +1042,4 @@ package
       }
    }
 }
+
