@@ -303,7 +303,8 @@ package
          {
             _loc3_ = this.iTickCount;
             this.iTickCount = getTimer();
-            this.ncharRemainder += (_loc6_ = (_loc4_ = (this.iTickCount - _loc3_) / 1000) * this.ucharsPerSec) - _loc6_;
+            _loc4_ = (this.iTickCount - _loc3_) / 1000;
+            this.ncharRemainder += (_loc6_ = _loc4_ * this.ucharsPerSec) - _loc6_;
             if(this.ncharRemainder > 1)
             {
                _loc6_ += 1;
